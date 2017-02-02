@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>SchoolApp |  Assignment</title>
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <!-- Bootstrap 3.3.5 -->
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="dist/font-awesome/font-awesome-4.5.0/css/font-awesome.min.css">
+        <link rel="stylesh  eet" href="dist/css/ionicons.min">
+        <!-- Ionicons -->
+        <!--<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">-->
+        <!-- Theme style -->
+        <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+        <!-- AdminLTE Skins. Choose a skin from the css/skins
+             folder instead of downloading all of them to reduce the load. -->
+        <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
+        <!-- iCheck -->
+        <link rel="stylesheet" href="plugins/iCheck/flat/blue.css">
+        <!-- jvectormap -->
+        <link rel="stylesheet" href="plugins/jvectormap/jquery-jvectormap-1.2.2.css">
+        <!-- Date Picker -->
+        <link rel="stylesheet" href="plugins/datepicker/datepicker3.css">
+        <!-- Daterange picker -->
+        <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker-bs3.css">
+        <!-- bootstrap wysihtml5 - text editor -->
+        <link rel="stylesheet" href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+        <link rel="stylesheet" href="dist/css/school-style.css">
+        <!--<link rel="stylesheet" href="dist/mobile_asset/jquery.mobile-1.4.5.min.css">-->
+        <!-- jQuery 2.1.4 -->
+        <script src="plugins/jQuery/jQuery-2.1.4.min.js"></script>
+        <!--<script src="dist/mobile_asset/jquery.mobile-1.4.5.min.js"></script>-->
+        <!--<link rel="stylesheet" href="dist/mobile_asset/jquery.mobile-1.4.5.css">-->
+        <!-- jQuery UI 1.11.4 -->
+        <script src="dist/js/jquery-ui.min.js"></script>
+
+        <script src="bootstrap/js/jquery.form.js"></script>
+        <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+        <!--    <script>
+              $.widget.bridge('uibutton', $.ui.button);
+            </script>-->
+        <!-- Bootstrap 3.3.5 -->
+        <script src="bootstrap/js/bootstrap.min.js"></script>
+        <!-- Sparkline -->
+        <script src="plugins/sparkline/jquery.sparkline.min.js"></script>
+        <!-- jvectormap -->
+        <script src="plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+        <script src="plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+        <!-- jQuery Knob Chart -->
+        <script src="plugins/knob/jquery.knob.js"></script>
+        <!-- daterangepicker -->
+        <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.min.js"></script>-->
+        <script src="plugins/daterangepicker/daterangepicker.js"></script>
+        <!-- datepicker -->
+        <script src="plugins/datepicker/bootstrap-datepicker.js"></script>
+        <!-- Bootstrap WYSIHTML5 -->
+        <script src="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+        <!-- Slimscroll -->
+        <script src="plugins/slimScroll/jquery.slimscroll.min.js"></script>
+        <!-- FastClick -->
+        <script src="plugins/fastclick/fastclick.min.js"></script>
+        <!-- AdminLTE App -->
+        <script src="dist/js/app.min.js"></script>
+        <script src="dist/js/api_conf.js"></script>
+    </head>
+    <body class="hold-transition skin-blue sidebar-mini">
+        <div class="wrapper">
+
+            <div id="header-include"></div>
+
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                <section class="content">
+                    <div class="box box-info">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Add Assignment</h3>
+                        </div><!-- /.box-header -->
+                        <!-- form start -->
+                        <form class="add-form" id="assignment_form" enctype="multipart/form-data" method="post" action="app/index.php/organization/addTransport">
+                            <div class="box-body">
+                                <div class="form-group field-after">
+                                    <!-- <label class="col-sm-2 control-label" for="org_name">Course</label> -->
+                                    <div class="col-sm-12">
+                                        <input type="hidden" id="secret" name="secret">
+                                        <input type="hidden"  id="assignment_id"  name="assignment_id">
+                                        <select id="assignment_course" name="assignment_course" class="form-control">
+                                            <option value="">Select Course</option>
+                                        </select>
+
+                                    </div>
+                                </div>
+                                <div class="form-group field-after">
+                                    <!-- <label class="col-sm-2 control-label" for="org_name">Subject</label> -->
+                                    <div class="col-sm-12">
+                                        <select id="assignment_subject" name="assignment_subject" class="form-control">
+                                            <option value="">Select Subject</option>
+                                        </select>
+
+                                    </div>
+                                </div>
+                                <div class="form-group field-after">
+                                    <!-- <label class="col-sm-2 control-label" for="org_name">Topic</label> -->
+                                    <div class="col-sm-12">
+                                        <input type="text" name="assignment_topic" placeholder="Topic" id="assignment_topic" class="form-control">
+
+                                    </div>
+                                </div>
+                                <div class="form-group field-after">
+                                    <!-- <label class="col-sm-2 control-label" for="org_name">Document</label> -->
+                                    <div class="col-sm-12">
+                                        <input type="file" name="assignment_doc" placeholder="Document" id="assignment_doc" class="form-control" />
+                                        <p id="existing_link"></p>
+
+                                    </div>
+                                </div>
+                                <div class="form-group field-after">
+                                    <!-- <label class="col-sm-2 control-label" for="org_name">Maximum Marks</label> -->
+                                    <div class="col-sm-12">
+                                        <input type="text" name="assignment_marks" placeholder="Maximum Marks" id="assignment_marks" class="form-control">
+
+                                    </div>
+                                </div>
+                                <div class="form-group field-after">
+                                    <!-- <label class="col-sm-2 control-label" for="org_name">Submission Date</label> -->
+                                    <div class="col-sm-12">
+                                        <input type="text" name="submission_date" placeholder="Submission Date" id="submission_date" class="form-control">
+
+                                    </div>
+                                </div>
+                                <div class="form-group field-after">
+                                    <!-- <label class="col-sm-2 control-label" for="org_name">No. of Grace Days</label> -->
+                                    <div class="col-sm-12">
+                                        <input type="text" name="grace_days" placeholder="No. of Grace Days" id="grace_days" class="form-control">
+
+                                    </div>
+                                </div>
+                            </div><!-- /.box-body -->
+                        </form>
+                        <div class="box-footer">
+                            <button class="btn btn-info" type="button" id="exam_save">Save</button>
+                        </div><!-- /.box-footer -->
+                    </div>
+
+
+                </section><!-- /.content -->
+            </div>
+            <div class="control-sidebar-bg"></div>
+        </div><!-- ./wrapper -->
+
+
+        <script>
+            var studentdata = [];
+            var coursedata = [];
+            function getData(val) {
+                if (val == 1) {
+                    $("#notice-type-div").hide();
+                    return null;
+                } else if (val == 2) {//Student
+                    $("#notice-type-div").show();
+                } else if (val == 3) {//Course
+                    $.each(coursedata, function (i, item) {
+                        $("#notice_to").append("<option value=\"" + item.id + "\">" + item.course_name + "</option>");
+                    });
+                    $("#notice-type-div").show();
+                }
+            }
+            $(function () {
+                $("#submission_date").datepicker({
+                    format: 'yyyy-mm-dd'
+                });
+
+                var secret = localStorage.getItem("secret");
+                $("#secret").val(secret);
+                if (!secret)
+                {
+                    window.location.href = 'index.html';
+                }
+                $.ajax({
+                    type: "GET",
+                    data: {secret: secret},
+                    url: apiUrl + "notice/getAllCourseStudent",
+                    datatype: "json",
+                    success: function (result) {
+                        var obj = $.parseJSON(result);
+                        var org_course_html = '';
+                        $.each(obj.coursedata, function (i, obj_course) {
+                            org_course_html += '<option value="' + obj_course.id + '">' + obj_course.course_name + '</option>';
+                        })
+                        $("#assignment_course").append(org_course_html);
+                    },
+                    error: function () {
+                        console.log("Some Error Occured");
+                    }
+                });
+
+                $("#assignment_course").change(function () {
+                    var course_id = $(this).val();
+                    $.ajax({
+                        type: "POST",
+                        data: {'secret': secret, 'course_id': course_id},
+                        url: apiUrl + "notice/getAllSubject",
+                        datatype: "json",
+                        success: function (result) {
+                            var obj = $.parseJSON(result);
+                            var org_course_html = '';
+                            $.each(obj.subjects, function (i, obj_subject) {
+                                org_course_html += '<option value="' + obj_subject.subject_id + '">' + obj_subject.subject_name + '</option>';
+                            })
+                            $("#assignment_subject").html(org_course_html);
+                        },
+                        error: function () {
+                            console.log("Some Error Occured");
+                        }
+                    });
+
+                });
+
+
+
+                var img_user = localStorage.getItem("img_user");
+                var name_user = localStorage.getItem("name_user");
+                var summary_html = localStorage.getItem("summary_html");
+                var news_html = localStorage.getItem("news_html");
+                var nav_html = localStorage.getItem("nav_html");
+
+
+                $("#profile_image_top_right img").attr('src', img_user);
+                $("#top_right_user_detail").html(name_user);
+                $("#profile_image_left_bar img").attr('src', img_user);
+                $("#profile_image_top_right_click img").attr('src', img_user);
+                $("#user_detail_left_bar p").html(name_user);
+                $("#summary_details").html(summary_html);
+                $("#recent_notices").html(news_html);
+                $(".sidebar-menu").html(nav_html);
+
+                var int_unique = localStorage.getItem("int_unique");
+                var int_course_id = localStorage.getItem("int_course_id");
+                var int_subject_id = localStorage.getItem("int_subject_id");
+                var txt_assignment_topic = localStorage.getItem("txt_assignment_topic");
+                var txt_assignment_url = localStorage.getItem("txt_assignment_url");
+                var int_max_marks = localStorage.getItem("int_max_marks");
+                var dt_submission_date = localStorage.getItem("dt_submission_date");
+                var int_grace_days = localStorage.getItem("int_grace_days");
+                //setTimeout('', 400);
+
+
+                if (int_course_id != '')
+                {
+                    $.ajax({
+                        type: "POST",
+                        data: {'secret': secret, 'course_id': int_course_id},
+                        url: apiUrl + "notice/getAllSubject",
+                        datatype: "json",
+                        success: function (result) {
+                            var obj = $.parseJSON(result);
+                            var org_course_html = '';
+                            $.each(obj.subjects, function (i, obj_subject) {
+                                org_course_html += '<option value="' + obj_subject.subject_id + '">' + obj_subject.subject_name + '</option>';
+                            })
+                            $("#assignment_subject").html(org_course_html);
+                        },
+                        error: function () {
+                            console.log("Some Error Occured");
+                        }
+                    });
+                }
+
+
+                $("#assignment_id").val(int_unique);
+                $("#assignment_course").val(int_course_id);
+                $("#assignment_subject").val(int_subject_id);
+                $("#assignment_topic").val(txt_assignment_topic);
+                if (txt_assignment_url) {
+                    $("#existing_link").html('<a href="' + document_path + txt_assignment_url + '">Document</a>');
+                }
+                //$("#assignment_doc").val(txt_assignment_url);
+                $("#assignment_marks").val(int_max_marks);
+                $("#submission_date").val(dt_submission_date);
+                $("#grace_days").val(int_grace_days);
+
+                $("#exam_save").click(function () {
+                    var formData = new FormData();
+                    formData.append('file', $('input[type=file]')[0].files[0]);
+                    formData.append('assignment_course', $('#assignment_course').val());
+                    formData.append('assignment_subject', $('#assignment_subject').val());
+                    formData.append('assignment_topic', $('#assignment_topic').val());
+                    formData.append('assignment_marks', $('#assignment_marks').val());
+                    formData.append('submission_date', $('#submission_date').val());
+                    formData.append('grace_days', $('#grace_days').val());
+                    formData.append('assignment_id', $('#assignment_id').val());
+                    formData.append('secret', $('#secret').val());
+                    localStorage.setItem("int_unique", '');
+                    localStorage.setItem("int_course_id", '');
+                    localStorage.setItem("int_subject_id", '');
+                    localStorage.setItem("txt_assignment_topic", '');
+                    localStorage.setItem("txt_assignment_url", '');
+                    localStorage.setItem("int_max_marks", '');
+                    localStorage.setItem("dt_submission_date", '');
+                    localStorage.setItem("int_grace_days", '');
+                    $.ajax({
+                        type: "POST",
+                        url: apiUrl + "student/addAssignment",
+                        data: formData,
+                        datatype: "json",
+                        contentType: false, // The content type used when sending data to the server.
+                        cache: false, // To unable request pages to be cached
+                        processData: false, // To send DOMDocument or non processed data file it is set to false
+                        success: function (result) {
+                            var obj = $.parseJSON(result);
+                            if (obj.success)
+                            {
+                                localStorage.setItem("assig_mgg", 'Assignment Added Successfully');
+                                window.location.href = 'assignment_list.html';
+                            }
+                        },
+                        error: function () {
+                            console.log("Some Error Occured");
+                        }
+                    });
+                });
+                $('#logout').click(function () {
+                    window.location = 'logout.html';
+                });
+            });
+        </script>
+        <script src="dist/js/schoolApp-custom.js"></script>
+    </body>
+</html>

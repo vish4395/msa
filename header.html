@@ -1,0 +1,106 @@
+    <div class="wrapper" style="overflow: visible;">
+        <header class="main-header">
+            <!-- Logo -->
+            <!--    <a href="index.html" class="logo">
+            <!-- mini logo for sidebar mini 50x50 pixels -->
+            <!-- <span class="logo-mini"><b>School</b>App</span> -->
+            <!-- logo for regular state and mobile devices -->
+            <!-- <span class="logo-lg"><b>School</b>App</span> -->
+            <!-- </a> -->
+            <!-- Header Navbar: style can be found in header.less -->
+            <nav class="navbar navbar-static-top nav-flex" role="navigation">
+                <!-- Sidebar toggle button-->
+                <div class="flex-thrid">
+                    <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                        <span class="sr-only">Toggle navigation</span>
+                    </a>
+                </div>
+                <div class="text-center flex-thrid">
+                    <div class="login-logo">
+                        <a href="dashboard.html" title="school app"><b>S</b></a>
+                    </div>
+                </div>
+                <div class="flex-thrid">
+                    <div class="navbar-custom-menu">
+                        <ul class="nav navbar-nav">
+
+                            <!-- User Account: style can be found in dropdown.less -->
+                            <li class="dropdown user user-menu">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="profile_image_top_right">
+                                    <img src="dist/images/no-image.png" class="user-image" alt="User Image">
+                                    <span class="hidden-xs">User</span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <!-- User image -->
+                                    <li class="user-header" id="profile_image_top_right_click">
+                                        <img src="dist/images/no-image.png" class="img-circle" alt="User Image">
+                                        <p id="top_right_user_detail">
+                                            User
+                                        </p>
+                                    </li>
+                                    <!-- Menu Body -->
+
+                                    <!-- Menu Footer-->
+                                    <li class="user-footer">
+                                        <div style="float: left">
+                                            <a href="#" id="logout" class="btn btn-default btn-flat">Logout</a>
+                                        </div>
+                                        <div class="text-right">
+                                            <a href="profile_detail.html" class="btn btn-default btn-flat">Profile</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- Control Sidebar Toggle Button -->
+                            <!--                            <li>
+                                                            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+                                                        </li>-->
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <aside class="main-sidebar">
+            <!-- sidebar: style can be found in sidebar.less -->
+            <section class="sidebar">
+                <!-- Sidebar user panel -->
+                <div class="user-panel">
+                    <div class="pull-left image" id="profile_image_left_bar">
+                        <img src="dist/images/no-image.png" class="img-circle" alt="User Image">
+                    </div>
+                    <div class="pull-left info" id="user_detail_left_bar">
+                        <a href="dashboard.html"><p></p></a>
+                        <!--<a href="#"><i class="fa fa-circle text-success"></i> Online</a>-->
+                    </div>
+                </div>
+                <!-- search form -->
+                <!--                    <form action="#" method="get" class="sidebar-form">
+                                        <div class="input-group">
+                                            <input type="text" name="q" class="form-control" placeholder="Search...">
+                                                          <span class="input-group-btn">
+                                                            <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i></button>
+                                                          </span>
+                                        </div>
+                                    </form>-->
+                <!-- /.search form -->
+                <!-- sidebar menu: : style can be found in sidebar.less -->
+                <ul class="sidebar-menu">
+                    <!--<li class="header">MAIN NAVIGATION</li>-->
+
+                </ul>
+            </section>
+            <!-- /.sidebar -->
+        </aside>
+    </div>
+<script>
+$(document).ready(function(){
+	    $(".sidebar-toggle").click(function(e){
+        $("body").toggleClass("sidebar-open");
+    });
+		
+	 $('#logout').click(function () {
+		console.log("logout");
+        window.location.href = 'logout.html';
+    });
+});
+</script>
